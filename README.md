@@ -17,6 +17,8 @@
 
 #ncdu
 
+#unzip
+
 ###others: (high level):###########
 
 #malocate (and updatedb)
