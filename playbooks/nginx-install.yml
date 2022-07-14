@@ -1,0 +1,14 @@
+---
+- become: true
+  hosts: all
+  tasks:
+    - name: ensure nginx is at the latest version
+      apt:
+        name=nginx
+        state=latest
+    - name: ensure nginx is stopped
+      service:
+          name: nginx
+          state: stopped
+          enabled: no
+

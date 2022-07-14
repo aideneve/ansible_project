@@ -1,0 +1,12 @@
+---
+- become: true
+  hosts: all
+  tasks:
+    - name: install packeges from apt
+      apt:
+        name:
+          - ncdu
+          - nmap 
+          - net-tools
+        state: fixed
+      when: ansible_distribution == "Ubuntu"

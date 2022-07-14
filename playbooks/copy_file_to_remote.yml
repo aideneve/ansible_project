@@ -1,0 +1,14 @@
+---
+- become: true
+  hosts: all
+  tasks:
+    - name: copy file from master server
+      copy:
+        src: ~/ansible_project/ansible_project/files/testfile
+        #in dest what will be it's new name
+        dest: /tmp/testfile_from_master
+        owner: root
+        group: root
+        mode: 0775 
+
+

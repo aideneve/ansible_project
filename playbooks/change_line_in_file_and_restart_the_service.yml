@@ -1,0 +1,20 @@
+---
+- become: true
+  hosts: all
+  name: add crontab
+  tasks:
+    - name: add apt-get update at 3:00 AM
+      lineinfile:
+        path: /tmp/testfile_from_master
+        regexp: '^ok it seemed to work'
+        line: well hello there
+      when: ansible_distribution == "Ubuntu"
+      register: cronfile #capture the state of the new file in a variable 
+
+    - name: restart service if the file changed
+      service:
+        name: cron
+        state: restarted #after the line change above- restart the service!
+      when: cronfile.changed  
+    #according to the play above- if the file changed- then restart the service 
+    #also, no need to write for ubuntu again. this play will only run if the above ran.

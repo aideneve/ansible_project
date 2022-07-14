@@ -1,0 +1,8 @@
+---
+   - name: ishtop
+     hosts: webservers
+     tasks:
+       - name: ensure htop is there - if not - install it (absent to remove)
+         apt:
+           name: htop
+           state: fixed

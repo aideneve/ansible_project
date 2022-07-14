@@ -1,0 +1,34 @@
+---
+- become: true
+  hosts: all
+  tasks:
+  - name: create the user idan
+    user: 
+      name: idan
+      state: present
+      groups: root,humans
+      uid: 1000
+      update_password: always
+      #used: mkpasswd --method=sha-512 
+      password: '$6$f1.YK3wjCSFkd$/uPPYqhouWsvF1ib6sqmEptPJiYJyg1OiLblhVDiFF3v6NxgEBh20Otgci.vXPzUrpn5ZQ.Ldx50f0BxpwfH0/'
+      createhome: yes        # Defaults to yes
+      home: /home/idan    # Defaults to /home/<username>
+      shell: /bin/bash
+    register: idancreated #if idan created: make variable
+
+  - name: add idan to sudoers
+    copy:  #add a new sudoers file (watch the syntax!) --> idan ALL=(ALL) NOPASSWD:ALL and copy to the new hosts
+      src: ~/ansible_project/ansible_project/files/sudoers_idan
+      dest: /etc/sudoers.d/idan
+      owner: root
+      group: root
+      mode: 0440
+
+  - name: after creating the user, give him a cool bash shell
+    copy:
+        src: ~/ansible_project/ansible_project/files/cool_bash_shell
+        dest: /home/idan/.bashrc
+        owner: idan
+        group: idan
+        mode: 0644 
+    when: idancreated.changed #run playbook only IF idan was created

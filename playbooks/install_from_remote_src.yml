@@ -1,0 +1,16 @@
+---
+    - hosts: all
+      become: root
+      tasks: 
+      - name: install unzip (needed for terraform)
+        package: 
+          name: unzip
+
+      - name: install terraform
+        unarchive: 
+          src: https://releases.hashicorp.com/terraform/0.12.28/terraform_0.12.28_linux_amd64.zip
+          dest: /usr/local/bin
+          remote_src: yes #telling ansible know, don't even bother looking locally for this. and it's to save time.
+          mode: 0755
+          owner: root
+          group: root 

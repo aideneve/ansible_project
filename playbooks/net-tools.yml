@@ -1,0 +1,10 @@
+---
+   - name: install net-tools
+     hosts: all
+     tasks:
+       - name: ensure net-tools is there - if not - install it (absent to remove)
+         apt:
+           name: net-tools
+           state: fixed
+
+

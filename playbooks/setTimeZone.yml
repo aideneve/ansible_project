@@ -1,0 +1,7 @@
+---
+- name: set timezoe and configure timesyncd
+  hosts: all
+  become: yes
+  tasks:
+  - name: set timezone
+    shell: timedatectl set-timezone Asia/Jerusalem
