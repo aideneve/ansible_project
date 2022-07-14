@@ -1,36 +1,43 @@
-#ansible_project
-#what i want in my servers: for ansible
+ansible_project #what i want in my servers: for ansible
 
-###apt installs:############# 
+##apt installs:#############
 
-#htop
+htop
 
-#apt install net-tools
+apt install net-tools
 
-#install docker compose
+install docker compose
 
-#x11-utils
+x11-utils
 
-#openssh-server
+openssh-server
 
-#nmap
+nmap
 
-#ncdu
+whois 
 
-#unzip
+vim-syntax-docker: $ git clone https://github.com/ekalinin/Dockerfile.vim.git
+$ cd Dockerfile.vim
+$ make install
 
-###others: (high level):###########
+ncdu
 
-#malocate (and updatedb)
+unzip
 
-#motd
+##others: (a bit higher level):###########
 
-#docker (by the process:  https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04
+add :setnu (in vim)
 
-#NTP and time zone
+malocate (and updatedb)
 
-#bat (long process?)
+motd
 
-#users with fonfig (users, bash, aliases, groups..)
+docker (by the process: https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04
 
-#crotab --> apt update every morning at 3:00
+NTP and time zone
+
+bat (long process?)
+
+users with fonfig (users, bash, aliases, groups..)
+
+crotab --> apt update every morning at 3:00
