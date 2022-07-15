@@ -6,6 +6,8 @@ htop
 
 apt install net-tools
 
+apt-file
+
 install docker compose
 
 x11-utils
