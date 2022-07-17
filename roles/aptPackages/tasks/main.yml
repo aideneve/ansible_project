@@ -1,0 +1,16 @@
+- name: "Install my basic packages with apt"
+  apt:
+    pkg:
+      - htop
+      - apt-file
+      - net-tools
+      - docker-compose
+      - lsof
+      - x11-utils
+      - openssh-server
+      - nmap
+      - whois
+      - ncdu
+      - unzip
+      - tree
+    state: present

@@ -10,6 +10,8 @@ apt-file
 
 install docker compose
 
+tree
+
 x11-utils
 
 openssh-server
@@ -39,6 +41,12 @@ docker (by the process: https://www.digitalocean.com/community/tutorials/how-to-
 NTP and time zone
 
 bat (long process?)
+
+users:
+the user idan is present, has sudo access
+the group, sudoers is present
+idan is on sudo group
+group humans exist with the gis 1002
 
 users with fonfig (users, bash, aliases, groups..)
 
