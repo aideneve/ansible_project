@@ -1,2 +1,4 @@
 ---
 # vars file for motd
+motdlocation: /etc/motd
+newmotd: /root/ansible_project/ansible_project/roles/motd/files/mechanicum 

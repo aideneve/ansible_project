@@ -1,0 +1,4 @@
+---
+# vars file for newroles
+greeting: greetings!
+htop_package: htop

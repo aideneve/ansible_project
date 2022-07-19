@@ -17,7 +17,7 @@
 
 # Ex 2: A collection of hosts belonging to the 'webservers' group
 
-[webservers]
+[servers]
 #Digital Ocean
 165.227.145.6
 #Linode
@@ -26,8 +26,7 @@
 #AWS
 
 
-[webservers:vars]
-
+[servers:vars]
 
 
 # If you have multiple hosts following a pattern you can specify

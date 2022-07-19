@@ -1,2 +1,10 @@
----
-# tasks file for crontab
+- name: add crotab for root
+  copy:
+    src: /var/spool/cron/crontabs/root
+    #in dest what will be it's new name
+    dest: /var/spool/cron/crontabs/
+    owner: root
+    group: cronatb
+    mode: 0600
+    notify: 
+      - restart_crontab

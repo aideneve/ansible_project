@@ -1,2 +1,7 @@
----
-# tasks file for motd
+- name: copy motd
+  copy:
+   src: "{{ newmotd }}"
+   dest: "{{ motdlocation }}"
+   owner: root
+   group: root
+   mode: 0644

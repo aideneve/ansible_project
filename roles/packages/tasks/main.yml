@@ -1,7 +1,7 @@
 - name: "Install my basic packages with apt"
-  apt:
-    pkg:
-      - htop
+  package:
+    name:
+      - "{{ htop_package }}"
       - apt-file
       - net-tools
       - docker-compose
@@ -12,5 +12,4 @@
       - whois
       - ncdu
       - unzip
-      - tree
     state: present
