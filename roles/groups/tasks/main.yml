@@ -1,2 +1,18 @@
 ---
-# tasks file for groups
+- name: ensure group sudo is present
+  ansible.builtin.group:
+    name: sudo
+    state: present
+    gid: 27
+
+- name: ensure group docker is present
+  ansible.builtin.group:
+   name: docker
+   state: present
+   gid: 333
+
+- name: ensure group humans is present
+  ansible.builtin.group:
+   name: humans
+   state: present
+   gid: 555

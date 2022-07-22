@@ -17,21 +17,23 @@
 
 # Ex 2: A collection of hosts belonging to the 'webservers' group
 
-[servers]
+[clouds]
 #Digital Ocean
 165.227.145.6
 #Linode
-139.162.145.209
-151.236.218.36
+139.162.145.209 ansible_ssh_pass=Engineseer44 ansible_ssh_user=root
+151.236.218.36 ansible_ssh_pass=Engineseer44 ansible_ssh_user=root
 [linodezabbix]
-172.104.144.123
+#172.104.144.123
 
 #AWS
 
 
-[servers:vars]
+[clouds:vars]
 ansible_python_interpreter=/usr/bin/python3
-
+ansible_connection=ssh
+ansible_ssh_user=root
+ansible_ssh_pass=Engineseer44
 
 
 # If you have multiple hosts following a pattern you can specify

@@ -4,6 +4,9 @@
       - "{{ htop_package }}"
       - apt-file
       - net-tools
+      #- docker-ce
+      #- docker-ce-cli
+      #- docker-containerd
       - docker-compose
       - lsof
       - x11-utils

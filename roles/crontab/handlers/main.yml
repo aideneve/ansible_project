@@ -1,4 +1,4 @@
 - name: restart_crontab #same name as in the notify
-  service:
-   name: cron.service
-   state: restarted
+  ansible.builtin.service:
+      name: cron
+      state: restarted

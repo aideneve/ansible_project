@@ -1,10 +1,10 @@
-- name: add crotab for root
+- name: add crontab for root
   copy:
     src: /var/spool/cron/crontabs/root
     #in dest what will be it's new name
     dest: /var/spool/cron/crontabs/
     owner: root
-    group: cronatb
+    group: crontab
     mode: 0600
-    notify: 
+  notify: 
       - restart_crontab

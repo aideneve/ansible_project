@@ -1,17 +1,20 @@
  - hosts: all
    become: True
+   vars: 
+     ansible_python_interpreter: auto
    gather_facts: True
    pre_tasks:
-   #- name: update repository index (Ubuntu)
-   #  tags: always
-   #  apt:
-   #    update_cache: yes
-   #  changed_when: false
+   - name: update repository index (Ubuntu)
+     tags: always
+     apt:
+       update_cache: yes
+     changed_when: false
   
  - hosts: all
    become: True
    roles:
-     # - packages
-     # - motd
-       - crontab	
-
+      - packages
+      - motd
+      - crontab
+      - groups
+      - users

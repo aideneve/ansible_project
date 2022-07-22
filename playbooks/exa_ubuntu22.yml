@@ -1,0 +1,10 @@
+---
+- become: true
+  hosts: all
+  tasks:
+      - name: install exa
+        apt:
+          name:
+            - exa
+          state: present
+          when: ansible_os_family == "Ubuntu" and ansible_lsb.major_release|int >= 22.04
